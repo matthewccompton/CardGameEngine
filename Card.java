@@ -7,7 +7,6 @@ public class Card {
         this.face = face;
         this.suit = suit;
         this.value = value;
-        System.out.println("!!");
     }
 
     public String getFace(){
@@ -29,5 +28,4 @@ public class Card {
     public void setValue(int value){
         this.value = value;
     }
-
 }

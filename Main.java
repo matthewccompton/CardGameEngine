@@ -6,5 +6,7 @@ public class Main {
         Game game = new Game(newMenu.selection,5000);
         //game.LaunchGame();
 
+        Card card = new Card(null, null, 0);
+
     }
 }
