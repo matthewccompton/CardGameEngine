@@ -15,6 +15,16 @@ public class CardTypes {
             value = v;
             this.icon = i;
         }
+
+        public int getValue(){
+            return value;
+        }
+        public char getIcon(){
+            return icon;
+        }
+        public String getName(){
+            return this.name();
+        }
     }
     /** Suit type is the card suits (Spade, Heart, Diamond, Club)
      *  @symbol - data field: the character for the suit (S, H, D, C)
@@ -26,5 +36,18 @@ public class CardTypes {
         Suit(char c) {
             symbol = c;
         } 
+
+    public char getSymbol(){
+        return symbol;
+    }
+
+    public String getName(){
+        return this.name();
+    }
+
+
     };
+
+
+
 }
