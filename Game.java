@@ -1,15 +1,20 @@
-public class Game {
+public final class Game {
     // Attributes (fields)
     private int gamenumber;
-    private int credits;
 
     // Constructor
-    public Game(int slection, int credits) {
-        this.gamenumber = slection;
-        this.credits = credits;
+    public Game(int selection) {
+        System.out.println("Game Class!");
+        setGameSelection(selection);
+        LaunchGame();
+
     }
 
-    public void LaunchGame(){
+    private void setGameSelection(int selection){
+        this.gamenumber = selection;
+    }
+
+    private void LaunchGame(){
         switch(this.gamenumber){
             case 1:
                 System.out.println("Launching Blackjack...");
@@ -24,7 +29,7 @@ public class Game {
                 Poker poker = new Poker();
                 break;
         }
-        System.out.println("Credits: " + this.credits);
+
     }
 
 }

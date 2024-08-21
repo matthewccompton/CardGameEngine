@@ -1,31 +1,40 @@
+
+
 public class Card {
-    private String face;
-    private String suit;
-    private int value;
+    private final CardTypes.Face face;
+    private final CardTypes.Suit suit;
+    private final int value;
+    private boolean special;
 
-    public Card(String face, String suit, int value){
+    public Card(CardTypes.Face face, CardTypes.Suit suit, int value) {
         this.face = face;
         this.suit = suit;
         this.value = value;
+        this.special = false;
     }
 
-    public String getFace(){
-        return face;
+    public CardTypes.Face getFace() {
+        return this.face;
     }
-    public String getSuit(){
-        return suit;
+
+    public CardTypes.Suit getSuit() {
+        return this.suit;
     }
+
     public int getValue(){
-        return value;
+        return this.value;
     }
 
-    public void setFace(String face){
-        this.face = face;
+    public boolean getSpecial(){
+        return this.special;
     }
-    public void setSuit(String suit){
-        this.suit = suit;
+
+    public void setSpecial(boolean setting){
+        this.special = setting;
     }
-    public void setValue(int value){
-        this.value = value;
+
+    @Override
+    public String toString() {
+        return face.getIcon() + "" + suit.getSymbol(); // For example: "AS" for Ace of Spades
     }
 }

@@ -3,10 +3,10 @@ public class Main {
         Menu newMenu = new Menu();
         //System.out.println(newMenu.selection);
         // Create an instance of a new game
-        Game game = new Game(newMenu.selection,5000);
+        Game game = new Game(newMenu.selection);
         //game.LaunchGame();
 
-        Card card = new Card(null, null, 0);
+        //Card card = new Card(null, null, 0);
 
     }
 }
