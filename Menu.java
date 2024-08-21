@@ -1,9 +1,9 @@
-import java.util.Scanner;
-
 
 public class Menu {
     public int selection;
 public Menu(){
-    this.selection = 1;
+    selection = 1;
 }
+
+
 }   

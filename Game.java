@@ -1,6 +1,7 @@
 public final class Game {
     // Attributes (fields)
     private int gamenumber;
+    public static Credits credits;
 
     // Constructor
     public Game(int selection) {
@@ -15,6 +16,9 @@ public final class Game {
     }
 
     private void LaunchGame(){
+        Credits newcredits = makeCredits();
+        this.credits = newcredits;
+
         switch(this.gamenumber){
             case 1:
                 System.out.println("Launching Blackjack...");
@@ -30,6 +34,13 @@ public final class Game {
                 break;
         }
 
+        //System.out.println(credits.getCredits());
+
+    }
+
+    private Credits makeCredits(){
+        Credits credits = new Credits();
+        return credits;
     }
 
 }
