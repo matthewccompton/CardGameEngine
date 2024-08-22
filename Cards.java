@@ -4,7 +4,7 @@ import java.util.Collections;
 //The point of this class is to be a dynamic collection of cards.  
 public class Cards {
 
-    private ArrayList<Card> all;
+    public ArrayList<Card> all;
 
     Cards(){
     ArrayList<Card> cards = new ArrayList<>();

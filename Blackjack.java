@@ -1,9 +1,12 @@
+
+
 public class Blackjack{
     private Credits credits = Game.credits;
 
     private Cards playerHand;
     private Cards dealerHand;
     private Cards cardStack;
+    private int playerHandEvaluation;
 
     public Blackjack() {
         DeckOfCards newdeck = new DeckOfCards();
@@ -12,7 +15,30 @@ public class Blackjack{
         makeCardsReady(deck);
         //Deal to player and dealer
         firstDeal();
+        System.out.println("Player hand values");
 
+
+        System.out.println("!!");
+        int handval = 0;
+        for(Card c: this.playerHand.all) {
+            int value = c.getValue();
+            String face = c.getFace().toString();
+            System.out.println("Card Value:" + value);
+            boolean isace = false;
+            System.out.println("Card Face: "+face);
+            if(face.equals("Ace")){
+            isace = true;
+            System.out.println("Ace Face!");
+            }
+            if(value == 1){
+                System.out.println("Ace is present");
+                handval += 11;
+            }
+            else{
+                handval +=c.getValue();
+            }
+        }
+        System.out.println("Hand Value after eval: " + handval + "\n");
         //Debug
         System.out.println("Dealer is showing: " + this.dealerHand.getCard(0));
         System.out.println("Player has: (" + this.playerHand.getCard(0) + ") and is showing: " + this.playerHand.getCard(1));
