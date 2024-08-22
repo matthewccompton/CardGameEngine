@@ -1,45 +1,44 @@
 public final class Game {
-    // Attributes (fields)
+    // Attributes
     private int gamenumber;
     public static Credits credits;
 
     // Constructor
     public Game(int selection) {
-        System.out.println("Game Class!");
         setGameSelection(selection);
+        Credits newcredits = makeCredits();
+        Game.credits = newcredits;
         LaunchGame();
-
     }
 
-    private void setGameSelection(int selection){
+    public void setGameSelection(int selection){
         this.gamenumber = selection;
     }
 
     private void LaunchGame(){
-        Credits newcredits = makeCredits();
-        this.credits = newcredits;
-
         switch(this.gamenumber){
-            case 1:
+            case 1 -> {
                 System.out.println("Launching Blackjack...");
                 Blackjack blackjack = new Blackjack();
-                break;
-            case 2:
+            }
+            case 2 -> {
                 System.out.println("Launching Go Fish...");
                 GoFish gofish = new GoFish();
-                break;
-            case 3:
+            }
+            case 3 -> {
                 System.out.println("Launching Poker...");
                 Poker poker = new Poker();
-                break;
+            }
         }
 
         //System.out.println(credits.getCredits());
 
     }
 
+    //STUBB: Can add credits from external sources in the future here.
     private Credits makeCredits(){
         Credits credits = new Credits();
+        //Check for external credits here... in the future 
         return credits;
     }
 

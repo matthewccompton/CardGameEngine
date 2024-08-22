@@ -20,16 +20,6 @@ public class DeckOfCards {
         return deck;
     }
 
-    // Method to shuffle the deck
-    public void shuffleDeck() {
-        for (int i = deck.length - 1; i > 0; i--) {
-            int j = (int) (Math.random() * (i + 1));
-            Card temp = deck[i];
-            deck[i] = deck[j];
-            deck[j] = temp;
-        }
-    }
-
     // Method to print the deck
     public void printDeck() {
         for (Card card : deck) {
