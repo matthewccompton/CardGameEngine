@@ -6,7 +6,11 @@ public class Blackjack{
     private Cards playerHand;
     private Cards dealerHand;
     private Cards cardStack;
-    private int playerHandEvaluation;
+
+    private int phShown;
+    private int phActual;
+    private int dShown;
+    private int dActual;
 
     public Blackjack() {
         DeckOfCards newdeck = new DeckOfCards();
@@ -15,7 +19,8 @@ public class Blackjack{
         makeCardsReady(deck);
         //Deal to player and dealer
         firstDeal();
-        System.out.println("Player hand values");
+
+        //System.out.println("Player hand values");
 
 
         System.out.println("!!");

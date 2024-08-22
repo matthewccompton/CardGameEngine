@@ -17,22 +17,33 @@ public final class Game {
 
     private void LaunchGame(){
         switch(this.gamenumber){
-            case 1 -> {
-                System.out.println("Launching Blackjack...");
-                Blackjack blackjack = new Blackjack();
-            }
-            case 2 -> {
-                System.out.println("Launching Go Fish...");
-                GoFish gofish = new GoFish();
-            }
-            case 3 -> {
-                System.out.println("Launching Poker...");
-                Poker poker = new Poker();
-            }
+            case 1:
+                    System.out.println("Launching Blackjack...");
+                    Blackjack blackjack = new Blackjack();
+                    break;
+            case 2:
+                    System.out.println("Launching Go Fish...");
+                    GoFish gofish = new GoFish();
+                    break;
+            case 3: 
+                    System.out.println("Launching Poker...");
+                    Poker poker = new Poker();
+                    break;
         }
-
-        //System.out.println(credits.getCredits());
-
+        //This is code not supported in earlier versions of Java...
+        //     case 1 -> {
+        //         System.out.println("Launching Blackjack...");
+        //         Blackjack blackjack = new Blackjack();
+        //     }
+        //     case 2 -> {
+        //         System.out.println("Launching Go Fish...");
+        //         GoFish gofish = new GoFish();
+        //     }
+        //     case 3 -> {
+        //         System.out.println("Launching Poker...");
+        //         Poker poker = new Poker();
+        //     }
+        // }
     }
 
     //STUBB: Can add credits from external sources in the future here.
