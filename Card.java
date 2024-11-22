@@ -5,12 +5,14 @@ public class Card {
     private final CardTypes.Suit suit;
     private final int value;
     private boolean special;
+    public int revealLevel;
 
     public Card(CardTypes.Face face, CardTypes.Suit suit, int value) {
         this.face = face;
         this.suit = suit;
         this.value = value;
         this.special = false;
+        this.revealLevel = 0;
     }
 
     public CardTypes.Face getFace() {
@@ -23,6 +25,10 @@ public class Card {
 
     public int getValue(){
         return this.value;
+    }
+
+    public void setReveal(int n){
+        this.revealLevel = n;
     }
 
     public boolean getSpecial(){

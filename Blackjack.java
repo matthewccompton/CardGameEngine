@@ -1,36 +1,44 @@
-
-
 public class Blackjack{
-    private Credits credits = Game.credits;
 
     private Cards playerHand;
     private Cards dealerHand;
     private Cards cardStack;
+    private boolean playGame;
 
-    private int phShown;
-    private int phActual;
-    private int dShown;
-    private int dActual;
 
     public Blackjack() {
-        DeckOfCards newdeck = new DeckOfCards();
-        Card[] deck = newdeck.getDeck();
+        System.out.println("\nWelcome to BlackJack!\n");
+        
+        // Get a deck of cards
+        DeckOfCards newdeck = new DeckOfCards(); // Unshuffled generic deck
 
-        makeCardsReady(deck);
-        //Deal to player and dealer
-        firstDeal();
+        // Form the cards for this game
+        makeCardsReady(newdeck.getDeck()); 
+        PlayGame();
 
-        //System.out.println("Player hand values");
+    }
+
+    private void PlayGame(){
+        this.playGame = true;
+         do { 
+            // Deal to player and dealer
+            firstDeal();
+            readItOut();
 
 
-        System.out.println("!!");
+            this.playGame = false;
+         } while (playGame);
+    }
+
+    private void readItOut(){
+        System.out.println("\nReading the situation...");
         int handval = 0;
         for(Card c: this.playerHand.all) {
             int value = c.getValue();
             String face = c.getFace().toString();
             System.out.println("Card Value:" + value);
             boolean isace = false;
-            System.out.println("Card Face: "+face);
+            System.out.println("Card Face: " + face);
             if(face.equals("Ace")){
             isace = true;
             System.out.println("Ace Face!");
@@ -48,26 +56,21 @@ public class Blackjack{
         System.out.println("Dealer is showing: " + this.dealerHand.getCard(0));
         System.out.println("Player has: (" + this.playerHand.getCard(0) + ") and is showing: " + this.playerHand.getCard(1));
         System.out.println("Dealer is not showing: ("+this.dealerHand.getCard(1)+")");
-
         System.out.println("Dealer has a hand value of: " + (this.dealerHand.getCard(0))); //+this.dealerHand.getCard(0).getValue()) );
     }
 
+    // First deal in blackjack is worthy of its own function
     private void firstDeal(){
-        Cards newPlayerHand = new Cards();
-        this.playerHand = newPlayerHand;
-        Cards newDealerHand = new Cards();
-        this.dealerHand = newDealerHand;
-
-        
-        Card playerCard1 = this.cardStack.pullCard();
-        this.playerHand.addCard(playerCard1);
-        Card dealerCard1 = this.cardStack.pullCard();
-        this.dealerHand.addCard(dealerCard1);
-        Card playerCard2 = this.cardStack.pullCard();
-        this.playerHand.addCard(playerCard2);
-        Card dealerCard2 = this.cardStack.pullCard();
-        this.dealerHand.addCard(dealerCard2);
+        this.playerHand = new Cards();
+        this.dealerHand = new Cards();
+        for(int i=0; i < 2; i++){
+            this.playerHand.addCard(this.cardStack.pullCard());
+            this.dealerHand.addCard(this.cardStack.pullCard());
+        }
+    // DATABASE UPDATE HERE ???
     }
+
+
 
     private void makeCardsReady(Card[] deck){
         Cards newCardStack = new Cards();

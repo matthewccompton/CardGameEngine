@@ -21,7 +21,6 @@ public class Cards {
         return null;
     }
 
-
     public void addCard(Card card){
         //System.out.println(card + " added");
         this.all.add(card);
